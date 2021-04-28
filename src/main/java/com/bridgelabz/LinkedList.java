@@ -1,20 +1,28 @@
 package com.bridgelabz;
 
-public class LinkedList<T> implements List<T>  {
-    MyNode head;
+public class LinkedList implements List<INode>  {
+    private INode head;
+    private INode tail;
 
-    public MyNode getFirst() {
-        return head;
+    public LinkedList() {
+        this.head = head;
+        this.tail = tail;
     }
 
     @Override
-    public boolean add(T number) {
-        MyNode newData = new MyNode(number);
-        if (head == null) {
-            head = newData;
-            return true;
+    public void add(INode newNode) {
+        if (this.tail == null){
+          this.tail = newNode;
         }
-        return true;
 
+        if (this.head == null){
+            this.head = newNode;
+        }
+
+        else {
+            INode tempNode = this.head;
+            this.head = newNode;
+            this.head.setNext(tempNode);
+        }
     }
 }
