@@ -2,6 +2,6 @@ package com.bridgelabz;
 
 public interface List<INode> {
     void add(INode newNode);
-    //void addLast(Inode newNode);
+    void append(INode newNode);
      //void printMyNode();
 }

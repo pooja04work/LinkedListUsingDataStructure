@@ -1,6 +1,6 @@
 package com.bridgelabz;
 
-public class LinkedList implements List<INode>  {
+public class LinkedList implements List<INode> {
     public INode head;
     public INode tail;
 
@@ -11,19 +11,32 @@ public class LinkedList implements List<INode>  {
 
     @Override
     public void add(INode newNode) {
-        if (this.tail == null){
+        if (this.tail == null) {
             this.tail = newNode;
         }
-        if (this.head == null){
+        if (this.head == null) {
             this.head = newNode;
-        }
-        else {
+        } else {
             INode tempNode = this.head;
             this.head = newNode;
             this.head.setNext(tempNode);
         }
     }
-    public void printMyNode(){
+
+    @Override
+    public void append(INode newNode) {
+        if (this.head == null) {
+            this.head = newNode;
+        }
+        if (this.tail == null) {
+            this.tail = newNode;
+        } else {
+            this.tail.setNext(newNode);
+            this.tail = newNode;
+        }
+    }
+
+    public void printMyNode() {
         StringBuffer myNodes = new StringBuffer("My Nodes: ");
         INode tempNode = head;
         while (tempNode.getNext() != null) {
@@ -36,17 +49,4 @@ public class LinkedList implements List<INode>  {
     }
 
 
-//    @Override
-//    public void addLast(INode newNode) {
-//        if (this.head == null){
-//            this.head = newNode;
-//        }
-//        if (this.tail == null){
-//            this.tail = newNode;
-//        }
-//        else{
-//            INode tempNode = this.tail;
-//            this.tail = newNode;
-//            this.tail.setNext(tempNode);
-//        }
 }
