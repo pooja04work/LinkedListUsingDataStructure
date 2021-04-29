@@ -35,7 +35,13 @@ public class LinkedList implements List<INode> {
             this.tail = newNode;
         }
     }
-
+    @Override
+    public void insert(INode mynode ,INode newNode){
+        INode tempNode = mynode.getNext();
+        mynode.setNext(newNode);
+        newNode.setNext(tempNode);
+    }
+    @Override
     public void printMyNode() {
         StringBuffer myNodes = new StringBuffer("My Nodes: ");
         INode tempNode = head;
