@@ -5,4 +5,6 @@ public interface List<INode> {
     void append(INode newNode);
     void printMyNode();
     void insert(INode newNode, INode myNode);
+    INode pop();
+
 }
