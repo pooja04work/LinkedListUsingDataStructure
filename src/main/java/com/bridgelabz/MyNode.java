@@ -16,12 +16,12 @@ public class MyNode<T> implements INode<T> {
 
     @Override
     public INode getNext() {
-        return null;
+        return this.next;
     }
 
     @Override
     public void setNext(INode next) {
-
+        this.next = next;
     }
 
     @Override

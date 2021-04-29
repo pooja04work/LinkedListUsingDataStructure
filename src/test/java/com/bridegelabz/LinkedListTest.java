@@ -2,6 +2,7 @@ package com.bridegelabz;
 
 import com.bridgelabz.LinkedList;
 import com.bridgelabz.MyNode;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class LinkedListTest<T>  {
@@ -14,7 +15,10 @@ public class LinkedListTest<T>  {
         linkedList.add(myFirstNode);
         linkedList.add(mySecondNode);
         linkedList.add(myThirdNode);
-
-
+        linkedList.printMyNode();
+        boolean result = linkedList.head.equals(myThirdNode) &&
+                         linkedList.head.getNext().equals(mySecondNode) &&
+                         linkedList.tail.equals(myFirstNode);
+        Assert.assertTrue(result);
+        }
     }
-}
