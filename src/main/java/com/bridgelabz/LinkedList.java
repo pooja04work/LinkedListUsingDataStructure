@@ -61,6 +61,20 @@ public class LinkedList implements List<INode> {
     }
 
     @Override
+    public INode popInBetween(int value) {
+        INode tempNode = head;
+        INode previousNode = head;
+        while (tempNode != null && !tempNode.getdata().equals(value)) {
+            previousNode = tempNode;
+            tempNode = tempNode.getNext();
+        }
+        if (tempNode == null)
+            return null;
+        previousNode.setNext(tempNode.getNext());
+        return tempNode;
+    }
+
+    @Override
     public boolean searchNode(int data) {
         INode tempNode = head;
         data = 30;

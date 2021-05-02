@@ -116,4 +116,23 @@ public class LinkedListTest<T>  {
                 linkedList.tail.equals(myFourthNode);
         Assert.assertTrue(result);
     }
+
+    @Test
+    public void given3NumbersWhenDeleteInBetween() {
+        MyNode<T> myFirstNode  =  new   MyNode(56);
+        MyNode<T> mySecondNode =  new   MyNode(30);
+        MyNode<T> myThirdNode  =  new   MyNode(40);
+        MyNode<T> myFourthNode  =  new   MyNode(70);
+        LinkedList linkedList = new LinkedList();
+        linkedList.add(myFirstNode);
+        linkedList.append(mySecondNode);
+        linkedList.append(myThirdNode);
+        linkedList.append(myFourthNode);
+        linkedList.popInBetween(40);
+        linkedList.printMyNode();
+        boolean result = linkedList.head.equals(myFirstNode) &&
+                linkedList.head.getNext().equals(mySecondNode)&&
+                linkedList.tail.equals(myFourthNode);
+        Assert.assertTrue(result);
+    }
 }

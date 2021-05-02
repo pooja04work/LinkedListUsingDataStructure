@@ -9,5 +9,6 @@ public interface List<INode> {
     INode popLast();
     boolean searchNode(int i);
     void insertInBetween(INode myNode, INode newNode);
+    INode popInBetween(int i);
 
 }
