@@ -47,8 +47,8 @@ public class LinkedList implements List<INode> {
         INode tempNode = this.head;
         this.head = head.getNext();
         return tempNode;
-
     }
+
     @Override
     public INode popLast(){
         INode tempNode = head;
@@ -71,6 +71,14 @@ public class LinkedList implements List<INode> {
             tempNode = tempNode.getNext();
         }
         return false;
+    }
+
+    @Override
+    public void insertInBetween(INode myNode, INode newNode) {
+        INode tempNode = myNode.getNext();
+                myNode.setNext(newNode);
+                newNode.setNext(tempNode);
+
     }
 
     @Override

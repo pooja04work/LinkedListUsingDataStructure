@@ -97,4 +97,22 @@ public class LinkedListTest<T>  {
         boolean result = linkedList.searchNode(30) ;
         Assert.assertTrue(result);
     }
+
+    @Test
+    public void given3NumbersWhenInsertInBetween() {
+        MyNode<T> myFirstNode  =  new   MyNode(56);
+        MyNode<T> mySecondNode =  new   MyNode(30);
+        MyNode<T> myThirdNode  =  new   MyNode(40);
+        MyNode<T> myFourthNode  =  new   MyNode(70);
+        LinkedList linkedList = new LinkedList();
+        linkedList.add(myFirstNode);
+        linkedList.append(mySecondNode);
+        linkedList.append(myFourthNode);
+        linkedList.insert(mySecondNode, myThirdNode);
+        boolean result = linkedList.head.equals(myFirstNode) &&
+                linkedList.head.getNext().equals(mySecondNode) &&
+                linkedList.head.getNext().getNext().equals(myThirdNode) &&
+                linkedList.tail.equals(myFourthNode);
+        Assert.assertTrue(result);
+    }
 }
