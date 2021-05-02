@@ -83,4 +83,18 @@ public class LinkedListTest<T>  {
         linkedList.printMyNode();
         Assert.assertTrue(result);
     }
+
+    @Test
+    public void given3NumbersWhenSearchAnElement() {
+        MyNode<T> myFirstNode  =  new   MyNode(56);
+        MyNode<T> mySecondNode =  new   MyNode(30);
+        MyNode<T> myThirdNode  =  new   MyNode(70);
+        LinkedList linkedList = new LinkedList();
+        linkedList.add(myFirstNode);
+        linkedList.append(mySecondNode);
+        linkedList.append(myThirdNode);
+        linkedList.printMyNode();
+        boolean result = linkedList.searchNode(30) ;
+        Assert.assertTrue(result);
+    }
 }

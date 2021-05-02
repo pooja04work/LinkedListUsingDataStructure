@@ -61,6 +61,19 @@ public class LinkedList implements List<INode> {
     }
 
     @Override
+    public boolean searchNode(int data) {
+        INode tempNode = head;
+        data = 30;
+        while(tempNode != null){
+            if (tempNode.getdata().equals(data)) {
+                return true;
+            }
+            tempNode = tempNode.getNext();
+        }
+        return false;
+    }
+
+    @Override
     public void printMyNode() {
         StringBuffer myNodes = new StringBuffer("My Nodes: ");
         INode tempNode = head;
