@@ -6,5 +6,7 @@ public interface List<INode> {
     void printMyNode();
     void insert(INode newNode, INode myNode);
     INode pop();
+    INode popLast();
+    boolean searchNode(int i);
 
 }

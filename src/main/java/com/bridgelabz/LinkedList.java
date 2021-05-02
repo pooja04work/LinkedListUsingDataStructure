@@ -49,6 +49,16 @@ public class LinkedList implements List<INode> {
         return tempNode;
 
     }
+    @Override
+    public INode popLast(){
+        INode tempNode = head;
+        while(!tempNode.getNext().equals(tail)){
+            tempNode = tempNode.getNext();
+        }
+        this.tail = tempNode;
+        tempNode.setNext(null);
+        return tempNode;
+    }
 
     @Override
     public void printMyNode() {
@@ -62,6 +72,4 @@ public class LinkedList implements List<INode> {
         myNodes.append(tempNode.getdata());
         System.out.println(myNodes);
     }
-
-
 }
