@@ -10,7 +10,7 @@ public class LinkedList implements List<INode> {
     }
 
     @Override
-    public void add(INode newNode) {
+    public void add(MyNode newNode) {
         if (this.tail == null) {
             this.tail = newNode;
         }
@@ -72,6 +72,25 @@ public class LinkedList implements List<INode> {
             return null;
         previousNode.setNext(tempNode.getNext());
         return tempNode;
+    }
+
+    @Override
+    public <T extends Comparable<T>> void sortList() {
+        INode<T> tempNode = head;
+        INode<T> tempNode1;
+        T storeValue = null;
+        while (tempNode.getNext() != null){
+            tempNode1 = tempNode.getNext();
+            while (tempNode1.getNext() != null) {
+                if (tempNode.getdata().compareTo(tempNode1.getdata()) > 0){
+                    storeValue = tempNode.getdata();
+                    tempNode.setdata(tempNode1.getdata());
+                    tempNode1.setdata(storeValue);
+                }
+                tempNode1 = tempNode1.getNext();
+            }
+            tempNode = tempNode.getNext();
+        }
     }
 
     @Override

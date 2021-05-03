@@ -1,8 +1,8 @@
 package com.bridgelabz;
 
 public class MyNode<T> implements INode<T> {
-    private T data;
-    private INode next;
+    public T data;
+    public INode next;
 
     public MyNode(T data) {
         this.data = data;

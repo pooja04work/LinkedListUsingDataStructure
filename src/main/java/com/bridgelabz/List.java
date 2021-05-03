@@ -1,7 +1,7 @@
 package com.bridgelabz;
 
 public interface List<INode> {
-    void add(INode newNode);
+    void add(MyNode newNode);
     void append(INode newNode);
     void printMyNode();
     void insert(INode newNode, INode myNode);
@@ -10,5 +10,6 @@ public interface List<INode> {
     boolean searchNode(int i);
     void insertInBetween(INode myNode, INode newNode);
     INode popInBetween(int i);
+    public <T extends Comparable<T>> void sortList();
 
-}
+    }
